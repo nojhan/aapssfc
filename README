@@ -1,0 +1,50 @@
+
+Apprendre à programmer, sans se faire chier
+===========================================
+
+Jeux de tableaux
+----------------
+* Jeux sur grilles
+    * Morpion
+    * Puissance 5
+    * Démineur
+* Automate cellulaire
+    * Conway
+
+Dessin procédural
+-----------------
+* Tortue LOGO
+    * Spirographe
+* Système de Lindenmayer
+    * Frises grecques
+    * Plantes
+* Pavages
+    * Périodiques
+    * Apériodiques
+* Formules graphiques
+    * Rose 3D
+* Fractals
+    * Mandelbrot
+
+Intelligence Artificielle
+-------------------------
+* Réseau de neurones
+    * Perceptron
+* Algorithmes évolutionnistes
+    * Algorithmes de colonies de fourmis
+        * TSP
+    * Estimation de distribution
+        * Optimisation numérique
+        * Distribution Gaussienne
+        * Algèbre linéaire
+        * Calcul Flottant
+
+
+Idées
+-----
+Points d'entrés : 
+
+* par application 
+* par concept
+* par niveau
+
