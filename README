@@ -2,6 +2,14 @@
 Apprendre à programmer, sans se faire chier
 ===========================================
 
+Jeux de base
+------------
+* Devine le numéro / pense à un numéro
+* Donjon dont vous êtes le héro
+* Jeu du pendu
+* Mastermind
+* Ordonner par permutations
+
 Jeux de tableaux
 ----------------
 * Jeux sur grilles
@@ -10,6 +18,16 @@ Jeux de tableaux
     * Démineur
 * Automate cellulaire
     * Conway
+        * http://www.exolete.com/code/life
+        * http://plife.sourceforge.net/
+        * http://stackoverflow.com/questions/3499538/code-golf-conways-game-of-life
+
+Système
+-------
+* Déplacement de fichier selon le type
+* Télécharger toutes les images d'une page web
+* Capture d'écran à télécharger sur un site en gardant l'url dans le presse-papier
+
 
 Dessin procédural
 -----------------
@@ -21,6 +39,7 @@ Dessin procédural
 * Pavages
     * Périodiques
     * Apériodiques
+        * http://psoup.math.wisc.edu/archive/recipe39.html
 * Formules graphiques
     * Rose 3D
 * Fractals
@@ -33,12 +52,18 @@ Intelligence Artificielle
 * Algorithmes évolutionnistes
     * Algorithmes de colonies de fourmis
         * TSP
+            * http://eric_rollins.home.mindspring.com/pythonAnt.html
     * Estimation de distribution
         * Optimisation numérique
         * Distribution Gaussienne
         * Algèbre linéaire
         * Calcul Flottant
 
+Sécurité et réseaux
+-------------------
+* Code césar
+* Clef unique
+* http://code.google.com/p/roxor-arcade
 
 Idées
 -----
