@@ -8,14 +8,33 @@ print("Pense à un nombre entre",min,"et",max)
 
 essais = 4
 
-def devine_entre(nb_min,nb_max):
-    if nb_min == nb_max:
+def deviner(nb_min,nb_max):
+    if nb_min == nb_max or nb_min > nb_max:
         print("Tu as triché !")
-    return random.randint(nb_min,nb_max)
+    hasard = random.randint(nb_min,nb_max)
+    return hasard
+
+
+def repondu( reponse ):
+    if reponse == 0:
+        min = min + 1
+        return False
+
+    elif reponse == 1:
+        max = max - 1
+        return False
+
+    elif reponse == 2:
+        print("Enfin !")
+        return True
+
+    else:
+        print("Tu dois répondre par 1, 2 ou 3 !")
+        return False
 
 
 while essais > 0:
-    devine = devine_entre(min,max)
+    devine = deviner(min,max)
 
     print("Je pense au nombre",devine,", est-il:")
     print("0: trop petit ?")
@@ -23,17 +42,7 @@ while essais > 0:
     print("2: le bon numéro ?")
     reponse = int( input() )
 
-    if reponse == 0:
-        min = min + 1
-
-    elif reponse == 1:
-        max = max - 1
-
-    elif reponse == 2:
-        print("Enfin !")
+    trouve = repondu( reponse )
+    if trouve == True:
         break
 
-    else:
-        print("Tu dois répondre par 1, 2 ou 3 !")
-
-    
