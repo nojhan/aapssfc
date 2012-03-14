@@ -11,8 +11,8 @@
 
 import random
 
-min=0
-max=10
+min = 0
+max = 10
 print("Pense à un nombre entre",min,"et",max)
 
 attempts = 10
@@ -25,12 +25,10 @@ attempts = 10
 def try_to_guess(nb_min,nb_max):
     """Choisi un nombre compris entre un min et un max et le renvoie."""
 
-    # On peut combiner deux conditions à l'aide d'opérateurs logiques.
-    # Ce test sert à vérifier s'il n'y a pas eu d'erreurs dans l'enchaînement
-    # des réponses de l'être humain.
-    # Si le min est le même que le max, il n'y a pas d'entier possible entre les deux.
-    # De même, si le min est supérieur au max, il y a eu erreur de logique.
-    if nb_min == nb_max or nb_min > nb_max:
+    if nb_min == nb_max
+        print("Tu as triché !")
+        
+    if nb_min > nb_max:
         print("Tu as triché !")
 
     rand = random.randint(nb_min,nb_max)
@@ -41,24 +39,24 @@ def try_to_guess(nb_min,nb_max):
 def reply( answer ):
     """Analyse la réponse de l'humain et renvoie vrai si on a trouvé la bonne."""
 
-    # Ces variables ont été définies en dehors de la fonction, elles sont "globales"
-    # il est nécessaire de le spécifier explicitement
+    # Ces variables ont été définies en dehors de la fonction, elles sont "globales",
+    # il est nécessaire de le spécifier explicitement.
     global min,max
 
     if answer == 0:
         min = min + 1
         return False
 
-    elif answer == 1:
+    if answer == 1:
         max = max - 1
         return False
 
-    elif answer == 2:
+    if answer == 2:
         print("Enfin !")
         return True
 
-    else:
-        print("Tu dois répondre par 1, 2 ou 3 !")
+    if answer > 2:
+        print("Tu dois répondre par 0, 1 ou 2 !")
         return False
 
 
@@ -73,11 +71,12 @@ while attempts > 0:
     print("0: trop petit ?")
     print("1: trop grand ?")
     print("2: le bon numéro ?")
-    answer = int( input() )
+    word = input()
+    answer = int( word )
 
     found = reply( answer )
     if found == True:
-        # il est inutile de continuer si on a déjà trouvé
+        # Il est inutile de continuer si on a déjà trouvé.
         break
     else:
         attempts = attempts - 1
