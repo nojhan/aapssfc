@@ -9,6 +9,8 @@
 # Fonctions #
 #############
 
+import random
+
 def try_to_guess(nb_min,nb_max):
     """Choisi un nombre compris entre un min et un max et le renvoie."""
 
@@ -58,8 +60,6 @@ def reply( answer, guess, min, max ):
 ########
 # Code #
 ########
-
-import random
 
 min = 0
 max = 10
