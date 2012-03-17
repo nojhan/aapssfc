@@ -36,6 +36,7 @@ Dessin procédural
 * Système de Lindenmayer
     * Frises grecques
     * Plantes
+        * version avec tortue sans grammaire Lindenmayer : http://johnlawrenceaspden.blogspot.fr/2009/11/program-for-twelve-year-old-programmers.html
 * Pavages
     * Périodiques
     * Apériodiques
@@ -45,8 +46,11 @@ Dessin procédural
         * http://www.romancortes.com/blog/1k-rose/
 * Fractals
     * Éponges de Koch
-    * Triangles de Sieprinsky
+    * Triangles de Sierpinsky
+        * http://www.daniweb.com/software-development/python/code/216809
+        * Avec une tortue logo : http://qfunction.wordpress.com/2009/11/11/turtle-graphics-in-python-cool/
     * Mandelbrot
+        * http://code.activestate.com/recipes/577111-mandelbrot-fractal-using-pil/
 
 Intelligence Artificielle
 -------------------------
