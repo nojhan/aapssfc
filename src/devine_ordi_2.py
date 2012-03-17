@@ -1,6 +1,5 @@
 #encoding: utf-8
 
-
 #############
 # Fonctions #
 #############
@@ -12,15 +11,17 @@ def try_to_guess( nb_min, nb_max ):
 
     if nb_min == nb_max or nb_min > nb_max:
         # Au cas où cette erreur apparait, il est préférable de signaler l'erreur
-        # pour qu'elle puisse être traitée
+        # pour qu'elle puisse être traitée.
         raise Exception("tu as triché !")
         
 
     # Il est plus efficace d'essayer le nombre au milieu des deux bornes,
-    # plutôt que d'en choisir un au hasard
-    #return nb_min + floor( (nb_max - nb_min) / 2 )
+    # plutôt que d'en choisir un au hasard.
+    #import math
+    #return nb_min + math.floor( (nb_max - nb_min) / 2 )
 
-    # En python, il existe un opérateur plus concis
+    # En python, il existe un opérateur plus concis, 
+    # qui ne nécessite pas d'importer un module.
     return nb_min + (nb_max - nb_min) // 2
 
     # Il aurait été plus concis d'écrire le calcul sous cette forme,
