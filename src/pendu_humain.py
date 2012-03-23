@@ -103,7 +103,7 @@ def play( secret_word ):
     """ Boucle de jeu principale, renvoie vrai si le joueur a gagné """
     partial_word = "_" * len(secret_word)
     fails = 0
-    used_letter = ""
+    used_letters = ""
     while fails < len( BOARDS_PIC ):
         display( BOARDS_PIC, partial_word, fails )
 
@@ -117,12 +117,12 @@ def play( secret_word ):
         if letter == secret_word:
             return True
 
-        if letter in used_letter:
-            print("Vous avez déjà essayé les lettres suivantes :",used_letter)
+        if letter in used_letters:
+            print("Vous avez déjà essayé les lettres suivantes :",used_letters)
             # Aller directement à l'itération suivante, sans compter les ratés.
             continue
         else:
-            used_letter += letter
+            used_letters += letter
 
         if letter in secret_word:
             partial_word = process( letter, partial_word, secret_word )
