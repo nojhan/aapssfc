@@ -37,17 +37,37 @@ def display_permutation( index ):
     print( pad + "└─────┘" )
     
 
-if __name__=="__main__":
-    size = 8
-    permutations = 10
-
-    items = [n for n in range(size)]
-    display_items( items )
-
+def shuffle( items, permutations ):
     for n in range(permutations):
         i = random.randint(0,size-4)
-        display_permutation( i )
-
         items = permute( items, i )
-        display_items( items )
 
+
+if __name__=="__main__":
+    size = 8
+    nb_shuffle = 5
+
+    items = [n for n in range(size)]
+    items_ok = [n for n in range(size)]
+
+    shuffle( items, nb_shuffle )
+    print("Séquence mélangée en",nb_shuffle,"permutations")
+    display_items( items )
+
+    attempts = 1
+    while True:
+        print("Quelle permutation ?")
+        i = int( input() )
+        if 0 > i or i > size-4:
+            print("L'index doit être compris entre 0 et",size-4)
+        else:
+            display_items( items )
+            permute( items, i )
+            display_permutation( i )
+            display_items( items )
+            
+            if items == items_ok:
+                print("Vous avez réussi en",attempts,"permutations")
+                break
+            else:
+                attempts += 1
