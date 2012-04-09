@@ -1,13 +1,12 @@
 #encoding: utf-8
 
 import math
-import numpy
 
 import Image
 import ImageDraw
 import ImageColor
 
-width = 1000
+width = 500
 perspective = width
 cameraZ = -width
 
