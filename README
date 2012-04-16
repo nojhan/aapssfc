@@ -24,6 +24,8 @@ Jeux de tableaux
         * http://www.exolete.com/code/life
         * http://plife.sourceforge.net/
         * http://stackoverflow.com/questions/3499538/code-golf-conways-game-of-life
+* Donjon crawler
+    * sur pavage apériodique ?
 
 Système
 -------
@@ -46,8 +48,7 @@ Dessin procédural
     * Apériodiques
         * http://psoup.math.wisc.edu/archive/recipe39.html
 * Formules graphiques
-    * Rose 3D
-        * http://www.romancortes.com/blog/1k-rose/
+    * Rose 3D : http://www.romancortes.com/blog/1k-rose/ - CODÉ (version simplifiée)
 * Fractals
     * Éponges de Koch
     * Triangles de Sierpinsky
