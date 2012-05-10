@@ -37,7 +37,8 @@ def petal(a,b,radius):
     x0 = radius
     y0 = radius
 
-    if ((x - x0) * (x - x0) + (y - y0) * (y - y0) < radius * radius):
+    # Note : prendre les racines carrées ne fait que rajouter une opération coûteuse inutile
+    if (x - x0) * (x - x0) + (y - y0) * (y - y0) < radius * radius:
         return {"x": x,
                 "y": y * (1 + b) / 2,
                 "z": b * radius - radius / 2, 
