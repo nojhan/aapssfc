@@ -9,12 +9,10 @@ import ImageColor
 width = 500
 perspective = width
 cameraZ = -width
+zBuffer = {}
 
 im = Image.new("RGB", (width,width) )
-
 draw = ImageDraw.Draw(im)
-
-zBuffer = {}
 
 
 def sphere(a, b, radius):
@@ -55,7 +53,6 @@ def cylinder( a,b, radius=100, length=400 ):
 
     return {"x": math.cos(angle) * radius,
             "y": math.sin(angle) * radius,
-            # centrage du cylindre
             "z": b * length - length / 2, 
             "r": 0,
             "g": math.floor(b*255),
@@ -63,7 +60,12 @@ def cylinder( a,b, radius=100, length=400 ):
 
 
 def if_none( func ):
+    """Ce décorateur permet de rajouter un test « autour » d'une fonction passée en argument.
+    Ici, il s'agit de n'appliquer la fonction décorée que si le premier argument est défini."""
+
+    # Le nom de la fonction embarquée importe peu.
     def wrapper( *args, **kwargs ):
+        """Si le premier argument n'est pas "None", applique la fonction, sinon, le renvoie."""
         if args[0]:
             return func( *args, **kwargs )
         else:
@@ -71,6 +73,9 @@ def if_none( func ):
     return wrapper
 
 
+# Le décorateur est appelé en premier lors de l'appel aux fonctions,
+# ce qui détermine si la fonction est réellement appelé (si le premier argument existe)
+# ou non (si l'argument n'existe pas).
 @if_none
 def rotate_x( d, a ):
     d["y"] = d["y"] * math.cos(a) - d["z"] * math.sin(a)
@@ -108,6 +113,8 @@ def draw_point( point ):
         if not zBuffer.has_key(zbi) or point["z"] < zBuffer[zbi]:
             zBuffer[zbi] = point["z"]
             fill = ( int(point["r"]), int(point["g"]), int(point["b"]) )
+            # On pourrait ne dessiner que la profondeur des objets 
+            # en n'utilisant qu'un gradient de blanc calculé sur "z" :
             #fill = ( 10+int(zBuffer[zbi]), ) * 3
             draw.point( (int(pX),int(pY)), fill )
 
