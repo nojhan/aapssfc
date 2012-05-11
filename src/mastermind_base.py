@@ -3,29 +3,33 @@
 import random
 
 class Mastermind():
-    
-    def __init__(self, slots = 4, colors = [0, 1, 2, 3, 4] ):
-        #self.colors = { 0:"rouge", 1:"jaune", 2:"vert", 3:"bleu", 4:"orange", 5:"blanc", 6:"violet", 7:"fuchsia"}
-        self.colors = [i for i in range(8)]
+
+    def __init__(self, slots = 4, colors = [i for i in range(8)] ):
+        """Initialise le plateau avec un nombre de cases et de couleurs donnés par l'utilisateur."""
+        self.colors = colors
         self.slots = slots
 
 
     def random_code(self):
-        code = []
-        for s in range(self.slots):
-            code.append( random.randrange( len(self.colors) ) )
-        return code
+        """Tire au hasard un code à faire deviner."""
+        # Choisir au hasard un élément dans "colors" pour chaque nombre entier entre 0 et "slots"
+        return [ random.choice(self.colors) for i in range(self.slots) ]
 
 
     def feedback(self, code, secret_code ):
+        """Décompte les couleurs existantes dans le code secret"""
+        # Le code passé doit avoir le même nombre de chiffres que le code secret,
+        # sinon, il y a vraiment un problème.
         assert( len(code) == len(secret_code) )
+
         good_positions = 0
         good_colors = 0
         for i in range(len(code)):
             # Si la couleur est à la bonne position
             if code[i] == secret_code[i]:
                 good_positions += 1
-            # Si la couleur n'est pas à cette position, mais qu'elle existe ailleurs
+            # Si la couleur n'est pas à cette position, mais qu'elle existe ailleurs:
+            # == si le code est dans la concaténation des chiffres avant le chiffre vérifié et de ceux après
             elif code[i] in secret_code[:i]+secret_code[i+1:]:
                 good_colors += 1
 
@@ -33,9 +37,14 @@ class Mastermind():
 
 
     def ask_code(self):
-        print("Entrez votre code")
+        print("Entrez votre code (4 chiffres entre 0 et 7)")
+        # On s'attends à une série de chiffres accolés,
+        # on s'assure donc de considérer l'entrée comme une chaine de caractères…
         str_code = str(input())
+
+        # … sur lesquels on pourra itérer, en les interprétants comme des entiers.
         code = [int(i) for i in str_code]
+
         return code
 
 
@@ -59,7 +68,7 @@ class Mastermind():
             else:
                 gp,gc = self.feedback( code, secret_code )
                 self.display(code,gp,gc)
-            
+
         if code == secret_code:
             return True,fails
         else:
