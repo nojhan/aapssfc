@@ -12,6 +12,7 @@ Jeux de base
     * IA du pendu - CODÉ
 * Donjon dont vous êtes le héro
 * Mastermind
+* Boggle
 
 
 Jeux de tableaux
