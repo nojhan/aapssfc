@@ -10,8 +10,8 @@ Jeux de base
 * Ordonner par permutations - CODÉ
 * Jeu du pendu - CODÉ
     * IA du pendu - CODÉ
+* Mastermind - CODÉ
 * Donjon dont vous êtes le héro
-* Mastermind
 * Boggle
 
 
