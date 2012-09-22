@@ -66,6 +66,7 @@ Dessin procédural
 
 Intelligence Artificielle
 -------------------------
+* Boids
 * Réseau de neurones
     * Perceptron
 * Algorithmes évolutionnistes
